@@ -4,10 +4,10 @@
 
 int main() {
   char *filename = "./creat";            
-  int mode = F_OK;
+  int mode = F_OK;  // 'F_OK' checks if file exists. But I don't know how 'F_OK' can be saved to 'int' date type..
 
-  if(access(filename, mode) == 0) {  // First argument of access() must be pointer variable.
-    if(chmod(filename, S_IRWXU | S_IRWXG) != 0) {  // chmod() is basically same as the 'chmod' command in Linux.
+  if(access(filename, mode) == 0) {  // First argument of access() API must be pointer variable.
+    if(chmod(filename, S_IRWXU | S_IRWXG) != 0) {  // chmod() API is basically same as the 'chmod' command in Linux.
       printf("chmod() error\n");
       
       return -1;
